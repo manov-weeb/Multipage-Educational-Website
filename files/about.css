@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --color-primary: #6c63ff;
+    --color-success: rgb(128, 235, 128);
+    --color-warning: rgb(255, 213, 0);
+    --color-danger: rgb(255, 92, 92);
+    --color-white: #ffff;
+    --color-black: #000;
+    --color-bg: #1f2641;
+    --color-bg1: #2e3267;
+    --color-bg2: #424890;
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transition: all 400ms ease;
+
+}
+
+/* ==================== ACHIEVEMENTS SECTION =============== */
+
+.about-achievements {
+    margin-top: 5rem;
+}
+
+.about-achievements-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 8rem;
+}
+
+.about-achievements-right>p {
+    margin: 2.56rem 0;
+}
+
+.about-achievements-left {
+    margin: auto;
+}
+
+.about-achievements-left img {
+    width: 100%;
+}
+
+.achievements-cards {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.achievement-card {
+    background-color: var(--color-bg1);
+    border-radius: 1.2rem;
+    padding: 3rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.achievement-card:hover {
+    background-color: var(--color-bg2);
+    box-shadow: 0 5rem 5rem rgba(0, 0, 0, 0.25);
+}
+
+.achievement-card h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.achievement-card p {
+    font-weight: 300;
+    margin-top: 1.2rem;
+
+}
+
+.achievement-count{
+    /* display: inline-block; */
+}
+
+.achievement-icon {
+    background-color: var(--color-danger);
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 1.8rem;
+    border-radius: 1rem;
+    font-size: 3.2rem;
+    font-weight: 900;
+    
+}
+
+.achievement-card:nth-child(2) .achievement-icon {
+    background-color: var(--color-warning);
+}
+
+.achievement-card:nth-child(3) .achievement-icon {
+    background-color: rgb(91, 91, 255);
+}
+
+.count-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.count-container p{
+    margin: auto 0;
+    margin-left: 0.5rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+/* ===================== TEAM MEMBER ========================= */
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+}
+
+.team {
+    background-color: var(--color-bg1);
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+}
+
+.team-member {
+    background-color: var(--color-bg2);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member:hover {
+    background: transparent;
+    border-color: var(--color-primary);
+    filter: saturate(1);
+}
+
+.team-member img {
+    filter: saturate(0);
+}
+
+.team-member img:hover {
+    filter: saturate(1);
+
+}
+
+.team-member-info * {
+    text-align: center;
+    margin-top: 1.4rem;
+
+}
+
+.team-member-info p {
+    font-weight: 400;
+    color: rgb(211, 204, 204);
+}
+
+.team-member-socials {
+    font-size: 1.5rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1.66rem;
+    top: 50%;
+    right: -100%;
+    background-color: var(--color-primary);
+    box-shadow: -1.8rem 0 2rem rgba(0, 0, 0, 0.67);
+    border-radius: 1.5rem 0rem 0rem 1.5rem;
+    transform: translateY(-50%);
+    transition: var(--transition);
+}
+
+.team-member:hover .team-member-socials {
+    right: 0%;
+}
+
+.team-member a {
+    padding: 1rem;
+}
+
+/* ====================== MEDIA QUERIES FOR TABLETS ============================== */
+
+@media screen and (max-width: 1024px) {
+    .about-achievements {
+        margin-top: 2rem;
+    }
+
+    .about-achievements-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .about-achievements-left {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .team-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+}
+
+
+/* =============================== MEDIA QUERIES FOR PHONES ==================================== */
+
+@media screen and (max-width: 600px) {
+    body {
+        /* background-color: red; */
+    }
+
+    .about-achievements-left img {
+        width: 100%;
+    }
+
+    .achievements-cards {
+        /* margin-top: 4rem; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .team-member {
+        padding: 0;
+    }
+
+    .team-member p {
+        margin-bottom: 1.5rem;
+    }
+}
